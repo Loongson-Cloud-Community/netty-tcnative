@@ -469,8 +469,8 @@
 
                         <property name="aprTarGzFile" value="apr-${aprVersion}.tar.gz" />
                         <property name="aprTarFile" value="apr-${aprVersion}.tar" />
-                        <get src="http://archive.apache.org/dist/apr/${aprTarGzFile}" dest="${project.build.directory}/${aprTarGzFile}" verbose="on" />
-                        <checksum file="${project.build.directory}/${aprTarGzFile}" algorithm="SHA-256" property="${aprSha256}" verifyProperty="isEqual" />
+                        <get src="http://10.130.0.16:8000/dist/apr/la64-apr-1.6.5.tar.gz" dest="${project.build.directory}/${aprTarGzFile}" verbose="on" />
+                          <!-- <checksum file="${project.build.directory}/${aprTarGzFile}" algorithm="SHA-256" property="${aprSha256}" verifyProperty="isEqual" /> -->
                         <gunzip src="${project.build.directory}/${aprTarGzFile}" dest="${project.build.directory}" />
                         <!-- Use the tar command (rather than the untar ant task) in order to preserve file permissions. -->
                         <exec executable="tar" failonerror="true" dir="${project.build.directory}/" resolveexecutable="true">
