@@ -57,7 +57,7 @@
     <nativeLibOnlyDir>${project.build.directory}/native-lib-only</nativeLibOnlyDir>
     <nativeJarWorkdir>${project.build.directory}/native-jar-work</nativeJarWorkdir>
     <nativeLibOsParts>${os.detected.name}_${os.detected.arch}</nativeLibOsParts>
-    <aprVersion>1.7.0</aprVersion>
+    <aprVersion>1.6.5</aprVersion>
     <aprSha256>48e9dbf45ae3fdc7b491259ffb6ccf7d63049ffacbc1c0977cced095e4c2d5a2</aprSha256>
     <boringsslBranch>chromium-stable</boringsslBranch>
     <!--
@@ -108,7 +108,7 @@
       <extension>
         <groupId>kr.motd.maven</groupId>
         <artifactId>os-maven-plugin</artifactId>
-        <version>1.6.2</version>
+        <version>1.7.1</version>
       </extension>
     </extensions>
 
@@ -477,7 +477,7 @@
                         <echo message="Downloading APR" />
 
                         <property name="aprArchiveFile" value="apr-${aprVersion}-win32-src.zip" />
-                        <get src="http://archive.apache.org/dist/apr/${aprArchiveFile}" dest="${project.build.directory}/${aprArchiveFile}" verbose="on" />
+                        <get src="http://10.130.0.16:8000/dist/apr/la64-apr-1.6.5.tar.gz" dest="${project.build.directory}/${aprArchiveFile}" verbose="on" />
                         <unzip src="${project.build.directory}/${aprArchiveFile}" dest="${project.build.directory}" />
                         <condition property="windowsRelease" value="Win32 Release" else="x64 Release">
                           <equals arg1="${archBits}" arg2="32" />
@@ -569,8 +569,7 @@
 
                         <property name="aprTarGzFile" value="apr-${aprVersion}.tar.gz" />
                         <property name="aprTarFile" value="apr-${aprVersion}.tar" />
-                        <get src="http://archive.apache.org/dist/apr/${aprTarGzFile}" dest="${project.build.directory}/${aprTarGzFile}" verbose="on" />
-                        <checksum file="${project.build.directory}/${aprTarGzFile}" algorithm="SHA-256" property="${aprSha256}" verifyProperty="isEqual" />
+                        <get src="http://10.130.0.16:8000/dist/apr/la64-apr-1.6.5.tar.gz" dest="${project.build.directory}/${aprTarGzFile}" verbose="on" />
                         <gunzip src="${project.build.directory}/${aprTarGzFile}" dest="${project.build.directory}" />
                         <!-- Use the tar command (rather than the untar ant task) in order to preserve file permissions. -->
                         <exec executable="tar" failonerror="true" dir="${project.build.directory}/" resolveexecutable="true">

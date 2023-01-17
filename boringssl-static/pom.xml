@@ -82,7 +82,7 @@
                 <configuration>
                   <checkoutDirectory>${boringsslSourceDir}</checkoutDirectory>
                   <connectionType>developerConnection</connectionType>
-                  <developerConnectionUrl>scm:git:https://boringssl.googlesource.com/boringssl</developerConnectionUrl>
+                  <developerConnectionUrl>scm:git:https://github.com/Loongson-Cloud-Community/boringssl</developerConnectionUrl>
                   <scmVersion>${boringsslBranch}</scmVersion>
                   <scmVersionType>branch</scmVersionType>
                   <skipCheckoutIfExists>true</skipCheckoutIfExists>
@@ -166,7 +166,7 @@
                         <!-- Use the known SHA of the commit -->
                         <exec executable="git" failonerror="true" dir="${boringsslSourceDir}" resolveexecutable="true">
                           <arg value="checkout" />
-                          <arg value="${boringsslCommitSha}" />
+                          <arg value="${boringsslBranch}" />
                         </exec>
 
                         <mkdir dir="${boringsslHome}" />
