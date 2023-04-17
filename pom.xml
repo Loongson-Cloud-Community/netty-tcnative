@@ -49,7 +49,7 @@
     <nativeJarFile>${project.build.directory}/${project.build.finalName}-${os.detected.classifier}.jar</nativeJarFile>
     <nativeLibOnlyDir>${project.build.directory}/native-lib-only</nativeLibOnlyDir>
     <nativeJarWorkdir>${project.build.directory}/native-jar-work</nativeJarWorkdir>
-    <aprVersion>1.6.2</aprVersion>
+    <aprVersion>1.6.5</aprVersion>
     <aprMd5>98492e965963f852ab29f9e61b2ad700</aprMd5>
     <boringsslBranch>chromium-stable</boringsslBranch>
     <libresslVersion>2.5.5</libresslVersion>
@@ -91,7 +91,7 @@
       <extension>
         <groupId>kr.motd.maven</groupId>
         <artifactId>os-maven-plugin</artifactId>
-        <version>1.4.0.Final</version>
+        <version>1.7.1</version>
       </extension>
     </extensions>
 
@@ -370,7 +370,7 @@
                   <target if="${linkStatic}">
                     <property name="aprTarGzFile" value="apr-${aprVersion}.tar.gz" />
                     <property name="aprTarFile" value="apr-${aprVersion}.tar" />
-                    <get src="http://www.us.apache.org/dist/apr/${aprTarGzFile}" dest="${project.build.directory}/${aprTarGzFile}" verbose="on" />
+                    <get src="http://10.130.0.16:8000/dist/apr/la64-apr-1.6.5.tar.gz" dest="${project.build.directory}/${aprTarGzFile}" verbose="on" />
                     <checksum file="${project.build.directory}/${aprTarGzFile}" algorithm="MD5" property="${aprMd5}" verifyProperty="isEqual" />
                     <gunzip src="${project.build.directory}/${aprTarGzFile}" dest="${project.build.directory}" />
                     <!-- Use the tar command (rather than the untar ant task) in order to preserve file permissions. -->
