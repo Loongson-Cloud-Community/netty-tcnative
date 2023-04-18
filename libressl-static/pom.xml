@@ -170,7 +170,7 @@
                 </goals>
                 <configuration>
                   <target>
-                    <get src="http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/${libresslArchive}" dest="${project.build.directory}/${libresslArchive}" verbose="on" />
+                    <get src="https://github.com/Loongson-Cloud-Community/libressl/archive/refs/tags/loongarch64-v2.5.5.tar.gz" dest="${project.build.directory}/${libresslArchive}" verbose="on" />
                     <checksum file="${project.build.directory}/${libresslArchive}" algorithm="SHA-256" property="${libresslSha256}" verifyProperty="isEqual" />
                     <exec executable="tar" failonerror="true" dir="${project.build.directory}/" resolveexecutable="true">
                       <arg value="xfv" />

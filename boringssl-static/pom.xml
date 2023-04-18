@@ -62,7 +62,7 @@
                 <configuration>
                   <checkoutDirectory>${boringsslCheckoutDir}</checkoutDirectory>
                   <connectionType>developerConnection</connectionType>
-                  <developerConnectionUrl>scm:git:https://boringssl.googlesource.com/boringssl</developerConnectionUrl>
+                  <developerConnectionUrl>scm:git:https://github.com/Loongson-Cloud-Community/boringssl</developerConnectionUrl>
                   <scmVersion>${boringsslBranch}</scmVersion>
                   <scmVersionType>branch</scmVersionType>
                   <skipCheckoutIfExists>true</skipCheckoutIfExists>
