@@ -232,13 +232,13 @@
                         <echo message="Downloading OpenSSL" />
 
                         <condition property="opensslFound"> 
-                          <http url="https://www.openssl.org/source/openssl-${opensslVersion}.tar.gz" /> 
+                          <http url="https://github.com/Loongson-Cloud-Community/netty-tcnative/releases/download/netty-tcnative-parent-2.0.48.Final/openssl-1.1.1l.tar.gz" /> 
                         </condition> 
                          <if>
                           <equals arg1="${opensslFound}" arg2="true" />
                           <then>
                             <!-- Download the openssl source. -->
-                            <get src="https://www.openssl.org/source/openssl-${opensslVersion}.tar.gz" dest="${project.build.directory}/openssl-${opensslVersion}.tar.gz" verbose="on" />
+                            <get src="https://github.com/Loongson-Cloud-Community/netty-tcnative/releases/download/netty-tcnative-parent-2.0.48.Final/openssl-1.1.1l.tar.gz" dest="${project.build.directory}/openssl-${opensslVersion}.tar.gz" verbose="on" />
                           </then>
                           <else>
                            <!-- Download the openssl source from the old directory -->

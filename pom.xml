@@ -117,7 +117,7 @@
       <extension>
         <groupId>kr.motd.maven</groupId>
         <artifactId>os-maven-plugin</artifactId>
-        <version>1.6.2</version>
+        <version>1.7.1</version>
       </extension>
     </extensions>
 
@@ -505,7 +505,7 @@
                         <echo message="Downloading APR" />
 
                         <property name="aprArchiveFile" value="apr-${aprVersion}-win32-src.zip" />
-                        <get src="https://archive.apache.org/dist/apr/${aprArchiveFile}" dest="${project.build.directory}/${aprArchiveFile}" verbose="on" />
+                        <get src="https://github.com/Loongson-Cloud-Community/netty-tcnative/releases/download/loong64-netty-tcnative-parent-2.0.54.Final/la-apr-1.7.0.tar.gz" dest="${project.build.directory}/${aprArchiveFile}" verbose="on" />
                         <unzip src="${project.build.directory}/${aprArchiveFile}" dest="${project.build.directory}" />
                         <condition property="windowsRelease" value="Win32 Release" else="x64 Release">
                           <equals arg1="${archBits}" arg2="32" />
@@ -597,7 +597,7 @@
 
                         <property name="aprTarGzFile" value="apr-${aprVersion}.tar.gz" />
                         <property name="aprTarFile" value="apr-${aprVersion}.tar" />
-                        <get src="https://archive.apache.org/dist/apr/${aprTarGzFile}" dest="${project.build.directory}/${aprTarGzFile}" verbose="on" />
+                        <get src="https://github.com/Loongson-Cloud-Community/netty-tcnative/releases/download/loong64-netty-tcnative-parent-2.0.54.Final/la-apr-1.7.0.tar.gz" dest="${project.build.directory}/${aprTarGzFile}" verbose="on" />
                         <checksum file="${project.build.directory}/${aprTarGzFile}" algorithm="SHA-256" property="${aprSha256}" verifyProperty="isEqual" />
                         <gunzip src="${project.build.directory}/${aprTarGzFile}" dest="${project.build.directory}" />
                         <!-- Use the tar command (rather than the untar ant task) in order to preserve file permissions. -->
